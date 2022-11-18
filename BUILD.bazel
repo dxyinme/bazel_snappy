@@ -1,0 +1,31 @@
+cc_library(
+  name = "snappy",
+  srcs = [
+    "snappy-internal.h",
+    "snappy-sinksource.cc",
+    "snappy-sinksource.h",
+    "snappy-stubs-internal.cc",
+    "snappy-stubs-internal.h",
+    "snappy-stubs-public.h",
+    "snappy.cc",
+    "snappy.h",
+  ],
+  hdrs = [
+    "snappy.h",
+  ],
+  visibility = ["//visibility:public"],
+)
+
+cc_library(
+  name = "snappy_c",
+  srcs = [
+    "snappy-c.cc",
+  ],
+  hdrs = [
+    "snappy-c.h",
+  ],
+  deps = [
+    ":snappy",
+  ],
+  visibility = ["//visibility:public"],
+)
